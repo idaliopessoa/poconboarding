@@ -36,7 +36,7 @@ class InAppWebViewPageState extends State<InAppWebViewPage> {
   InAppWebViewController? _webViewController;
   final initalUrl = URLRequest(
       url: Uri.parse(
-          "https://app-hmlg.certfy.tech/onboarding/autoid/1d0c176b-6d39-40c9-af3e-cd41dd7fe89d/steps"));
+          "https://app-dev.certfy.tech/onboarding/autoid/3e0ecdce-eb90-4e52-a50b-9883974b859c/steps"));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
