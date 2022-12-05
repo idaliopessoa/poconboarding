@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -8,6 +9,10 @@ Future main() async {
 
   await Permission.camera.request();
   await Permission.microphone.request();
+
+  if (Platform.isAndroid) {
+    await AndroidInAppWebViewController.setWebContentsDebuggingEnabled(true);
+  }
 
   runApp(const MyApp());
 }
@@ -36,7 +41,7 @@ class InAppWebViewPageState extends State<InAppWebViewPage> {
   InAppWebViewController? _webViewController;
   final initalUrl = URLRequest(
       url: Uri.parse(
-          "https://app-dev.certfy.tech/onboarding/autoid/3e0ecdce-eb90-4e52-a50b-9883974b859c/steps"));
+          "https://app-dev.certfy.tech/onboarding/autoid/c873938a-7c34-43a8-9218-66f6b45e3066/steps"));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
